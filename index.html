@@ -1,1 +1,89 @@
-1123123
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="renderer" content="webkit">
+    <meta name="HandheldFriendly" content="true">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+        <title>山河万里，你是我藏在微风里的惊喜 - 小窝</title>
+    <meta property="og:title" content="山河万里，你是我藏在微风里的惊喜 - 小窝" />
+    <link rel="shortcut icon" href="./res/image/favicon.ico">
+    <link rel="stylesheet" href="./res/css/main.css" />
+    <link href="https://cdnjs.loli.net/ajax/libs/twitter-bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdnjs.loli.net/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+</head>
+<body><div class="top container-fluid">
+    <div class=" logodiv">
+        <div class="row align-items-center">
+            <div class="col-5">
+                <div class=" ml-auto" style="text-align:center">
+                    <div class="lover" style="background-image: url(./res/image/2.png);"></div>
+                    <p class="lover-txt">居小居</p>
+                </div>
+            </div>
+            <div class="col-2 text-center">
+                <img class="icon-heart" src="./res/image/love.png" />
+            </div>
+            <div class="col-5 ">
+                <div class="  mr-auto" style="text-align:center">
+                    <div class="lover" style="background-image: url(./res/image/1.png);"></div>
+                    <p class="lover-txt">乖小乖</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<audio autoplay="autopaly" loop="loop" src="./res/image/snjxh.mp3"></audio>
+<div class="content">
+    <div class=" container">
+        <div class="row">
+            <div class="col-lg-8 col-md-12 contl">
+                <div class="contop">
+                    <img class="iconimg" src="./res/image/timg.jpg">
+                    <h5>❤静下来想你，觉得一切都美好的不可思议…❤</h5>
+                    <h6>📝这封<a style="color:tomato" onclick="javascript:alert('嘿嘿嘿,这个还没弄好喂;')">【给你的信】</a>，请务必打开看看~</h6>
+                    <h6>✨在这里，记录了我们一起经历过的<a style="color:tomato"  onclick="javascript:alert('嘿嘿嘿,这个还没弄好喂;')">【点点滴滴】</a></h6>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-12 contr">
+                <div class="condown text-center">
+                    <h5>这是我们相互相杀的</h5>
+                    <div id="site_runtime"></div>
+                </div>
+            </div>
+        </div>
+    </div> 
+</div>
+<footer>
+    <script src="https://cdnjs.loli.net/ajax/libs/popper.js/1.16.1/popper.min.js"></script>
+    <script src="https://cdnjs.loli.net/ajax/libs/twitter-bootstrap/4.4.1/js/bootstrap.min.js"></script>
+    <script src="./res/js/main.js"></script>
+    <script>
+        window.showSiteRuntime = function() {
+            site_runtime = $("#site_runtime");
+            if (!site_runtime) {
+                return;
+            }
+            window.setTimeout("showSiteRuntime()", 1000);
+            start = new Date("2019-07-20 00:00:00");
+            now = new Date();
+            T = (now.getTime() - start.getTime());
+            i = 24 * 60 * 60 * 1000;
+            d = T / i;
+            D = Math.floor(d);
+            h = (d - D) * 24;
+            H = Math.floor(h);
+            m = (h - H) * 60;
+            M = Math.floor(m);
+            s = (m - M) * 60
+            S = Math.floor(s);
+            site_runtime.html("第 <span class=\"digit\">" + D + "</span> 天 <br/><span class=\"digit\">" + H + "</span> 小时 <span class=\"digit\">" + M + "</span> 分钟 <span class=\"digit\">" + S + "</span> 秒");
+        };
+        showSiteRuntime();
+    </script>
+
+
+    </footer>
+</body>
+</html></body>
