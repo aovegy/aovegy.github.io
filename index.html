@@ -12,6 +12,221 @@
     <link rel="stylesheet" href="./res/css/main.css" />
     <link href="https://cdnjs.loli.net/ajax/libs/twitter-bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet">
     <script src="https://cdnjs.loli.net/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <style>
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Nunito', sans-serif;
+  /*background: -webkit-linear-gradient(right, #BE93C5 , #7BC6CC);*/
+  /*background: linear-gradient(to left, #BE93C5 , #7BC6CC);*/
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* _site-header.css */
+.site-header {
+  text-align: center;
+  padding: 40px 0;
+
+}
+
+/* _wrapper.css */
+.wrapper {
+  padding-left: 18px;
+  padding-right: 18px;
+  max-width: 1236px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+
+/* _timeline.css */
+.timeline {
+  position: relative;
+  margin: 30px auto;
+  padding: 60px 0;
+/*  background-image:url(./res/image/13.png);
+  background-color: pink;*/
+
+}
+.timeline::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 10%;
+  width: 4px;
+  height: 100%;
+  background-color: #8d94b1;
+}
+@media (min-width: 800px){
+  .timeline::before{
+    left: 50%;
+    margin-left: -2px;
+  }
+}
+.timeline__item {
+  margin-bottom: 100px;
+  position: relative;
+}
+.timeline__item::after{
+  content: "";
+  clear: both;
+  display: table;
+}
+.timeline__item:nth-child(2n) .timeline__item__content {
+  float: right;
+}
+.timeline__item:nth-child(2n) .timeline__item__content::before {
+  content: '';
+  right: 40%;
+}
+@media (min-width: 800px){
+  .timeline__item:nth-child(2n) .timeline__item__content::before{
+    left: inherit;
+  }
+}
+.timeline__item:nth-child(2n) .timeline__item__content__date {
+  background-color: #00BFFF;
+}
+.timeline__item:nth-child(2n) .timeline__item__content__description {
+  color: #00BFFF;
+}
+.timeline__item:last-child {
+  margin-bottom: 0;
+}
+.timeline__item-bg {
+  -webkit-transition: all 1s ease-out;
+  transition: all 1s ease-out;
+  color: #fff;
+}
+.timeline__item-bg:nth-child(2n) .timeline__item__station {
+  background-color: #00BFFF;
+}
+.timeline__item-bg:nth-child(2n) .timeline__item__content {
+  background-color: #00BFFF;
+}
+.timeline__item-bg:nth-child(2n) .timeline__item__content::before {
+  background-color: #00BFFF;
+}
+.timeline__item-bg:nth-child(2n) .timeline__item__content__description {
+  color: #fff;
+}
+.timeline__item-bg .timeline__item__station {
+  background-color: pink;
+}
+.timeline__item-bg .timeline__item__content {
+  background-color: pink;
+}
+.timeline__item-bg .timeline__item__content::before {
+  background-color: pink;
+}
+.timeline__item-bg .timeline__item__content__description {
+  color: #fff;
+}
+.timeline__item__station {
+  background-color: pink;
+  width: 40px;
+  height: 40px;
+  position: absolute;
+  border-radius: 50%;
+  padding: 10px;
+  top: 0;
+  left: 10%;
+  margin-left: -33px;
+  border: 4px solid #8d94b1;
+  -webkit-transition: all .3s ease-out;
+  transition: all .3s ease-out;
+}
+@media (min-width: 800px){
+  .timeline__item__station{
+    left: 50%;
+    margin-left: -30px;
+    width: 60px;
+    height: 60px;
+    padding: 15px;
+    border-width: 6px;
+  }
+}
+.timeline__item__content {
+  width: 80%;
+  background: pink;
+  padding: 20px 30px;
+  border-radius: 6px;
+  float: right;
+  -webkit-transition: all .3s ease-out;
+  transition: all .3s ease-out;
+}
+@media (min-width: 800px){
+  .timeline__item__content{
+    width: 40%;
+    float: inherit;
+    padding: 30px 40px;
+  }
+}
+.timeline__item__content::before {
+  content: '';
+  position: absolute;
+  left: 10%;
+  background: #8d94b1;
+  top: 20px;
+  width: 10%;
+  height: 4px;
+  z-index: -1;
+  -webkit-transition: all .3s ease-out;
+  transition: all .3s ease-out;
+}
+@media (min-width: 800px){
+  .timeline__item__content::before{
+    left: 40%;
+    top: 30px;
+    height: 4px;
+    margin-top: -2px;
+  }
+}
+.timeline__item__content__date {
+  margin: 0;
+  padding: 8px 12px;
+  font-size: 15px;
+  margin-bottom: 10px;
+  background-color: pink;
+  color: #fff;
+  display: inline-block;
+  border-radius: 4px;
+  border: 2px solid #fff;
+}
+.timeline__item__content__description {
+  margin: 0;
+  padding: 0;
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 300;
+  color: #65adb7;
+}
+@media (min-width: 800px){
+  .timeline__item__content__description{
+    font-size: 19px;
+    line-height: 28px;
+  }
+}
+
+/* _site-footer.css */
+.site-footer {
+  padding: 50px 0 200px 0;
+
+}
+.site-footer__text {
+  color: #e6e6e6;
+  font-size: 14px;
+  text-align: center;
+}
+.site-footer__text__link {
+  color: #8287a9;
+}</style>
 </head>
 <body><div class="top container-fluid">
     <div class=" logodiv">
@@ -41,10 +256,11 @@
             <div class="col-lg-8 col-md-12 contl">
                 <div class="contop">
                     <img class="iconimg" src="./res/image/timg.jpg">
-                    <h5>❤静下来想你，觉得一切都美好的不可思议…❤</h5>
-                    <h6>🐷想不想听音乐<a style="color:tomato" id="btn-play">【点我就放音乐】</a>啦</h6>
-                    <h6>📝这封<a style="color:tomato" onclick="javascript:alert('嘿嘿嘿,这个还没弄好喂;')">【给你的信】</a>，请务必打开看看~</h6>
-                    <h6>✨在这里，记录了我们一起经历过的<a style="color:tomato"  onclick="javascript:alert('嘿嘿嘿,这个还没弄好喂;')">【点点滴滴】</a></h6>
+                    <h6>💖静下来想你，觉得一切都美好的不可思议…💖</h6>
+                    <br>
+                    <h6>🐷想不想听音乐<a style="color:tomato" id="btn-play">【点我就放音乐】</a>啦🐷</h6>
+                    <!-- <h6>📝这封<a style="color:tomato" onclick="javascript:alert('嘿嘿嘿,这个还没弄好喂;')">【给你的信】</a>，请务必打开看看~📝</h6> -->
+                    <!-- <h6>✨在这里，记录了我们一起经历过的<a style="color:tomato"  onclick="javascript:alert('嘿嘿嘿,这个还没弄好喂;')">【点点滴滴】</a>✨</h6> -->
                 </div>
             </div>
             <div class="col-lg-4 col-md-12 contr">
@@ -56,18 +272,127 @@
         </div>
     </div> 
 </div>
+<section class="timeline">
+  <div class="wrapper">
+    <div class="timeline__item timeline__item--0 timeline__item-bg">
+      <div class="timeline__item__station"></div>
+      <div class="timeline__item__content">
+        <h2 class="timeline__item__content__date">2019. 07. 15 📍广东·深圳 </h2>
+        <p class="timeline__item__content__description">今天是我们正式成为网友的第一天，我加了你的微信👬，你通过了，然后我们......</p>
+      </div>
+    </div>
+    <div class="timeline__item timeline__item--1 timeline__item-bg">
+      <div class="timeline__item__station"></div>
+      <div class="timeline__item__content">
+        <h2 class="timeline__item__content__date">2019. 07. 20 📍广东·深圳</h2>
+        <p class="timeline__item__content__description">然后到了今天，吾冒着大雨☔跑去见网友，路途中还是很紧张滴，最后看了场电影🎥，然后就正式在一起啦~💏</p>
+      </div>
+    </div>
+    <div class="timeline__item timeline__item--2 timeline__item-bg">
+      <div class="timeline__item__station"></div>
+      <div class="timeline__item__content">
+        <h2 class="timeline__item__content__date">2019. 07. 26 📍广东·广州</h2>
+        <p class="timeline__item__content__description">🚗今天算是我跟你的一次旅行吧，那就是跑去广州长隆玩啦，这一天晚上非常忙碌，因为我得跑去拿花花🌹，然后去接你，然后正式出发广州...</p>
+      </div>
+    </div>
+    <div class="timeline__item timeline__item--3 timeline__item-bg">
+      <div class="timeline__item__station"></div>
+      <div class="timeline__item__content">
+        <h2 class="timeline__item__content__date">2019. 07. 27 📍广东·广州</h2>
+        <p class="timeline__item__content__description">广东·广州 今天是你的生日🎂，嘿嘿嘿，刚好借着挪车，把藏在车上许久的花花🌹和在酒店呆了一天的拼图，卡着夜晚12点送到了你的面前...</p>
+      </div>
+    </div>
+    <div class="timeline__item timeline__item--4 timeline__item-bg">
+      <div class="timeline__item__station"></div>
+      <div class="timeline__item__content">
+        <h2 class="timeline__item__content__date">2019. 08. 29 📍广东·梅州</h2>
+        <p class="timeline__item__content__description">一起回了梅州，然后见个面都是偷偷摸摸的，害怕，哈哈哈哈...</p>
+      </div>
+    </div>
+    <div class="timeline__item timeline__item--5 timeline__item-bg">
+      <div class="timeline__item__station"></div>
+      <div class="timeline__item__content">
+        <h2 class="timeline__item__content__date">2019. 09. 07 📍广东·深圳</h2>
+        <p class="timeline__item__content__description">去深圳湾看日落⛅，但是去错地方，日落没看成，但是也很开心😘...</p>
+      </div>
+    </div>
+    <div class="timeline__item timeline__item--6 timeline__item-bg">
+      <div class="timeline__item__station"></div>
+      <div class="timeline__item__content">
+        <h2 class="timeline__item__content__date">2019. 09. 23 📍广东·深圳</h2>
+        <p class="timeline__item__content__description">陪猪崽考驾照，但是出发时没坐我车，于是我便跟在了她教练车后边慢慢的游荡...</p>
+      </div>
+    </div>
+    <div class="timeline__item timeline__item--7 timeline__item-bg">
+      <div class="timeline__item__station"></div>
+      <div class="timeline__item__content">
+        <h2 class="timeline__item__content__date">2019. 10. 19 📍广东·深圳</h2>
+        <p class="timeline__item__content__description">万圣节，我们去了世界之窗，因为那里有万圣节活动👻，看着猪崽害怕的拉着我，心里美滋滋...</p>
+      </div>
+    </div>
+    <div class="timeline__item timeline__item--8 timeline__item-bg">
+      <div class="timeline__item__station"></div>
+      <div class="timeline__item__content">
+        <h2 class="timeline__item__content__date">2019. 10. 26 📍广东·惠州</h2>
+        <p class="timeline__item__content__description">我们一起出发去双月湾，大海🌊烟花🎇孔明灯🏮<br>行走在海滨栈道，海风吹动的是你的秀发，波动的却是我的心弦✨</p>
+      </div>
+    </div>
+    <div class="timeline__item timeline__item--9 timeline__item-bg">
+      <div class="timeline__item__station"></div>
+      <div class="timeline__item__content">
+        <h2 class="timeline__item__content__date">2019. 12. 01 📍广东·深圳</h2>
+        <p class="timeline__item__content__description">青青世界，看了超大的鱼🐟孔雀，风景🍃，各种各种美好回忆...</p>
+      </div>
+    </div>
+    <div class="timeline__item timeline__item--10 timeline__item-bg">
+      <div class="timeline__item__station"></div>
+      <div class="timeline__item__content">
+        <h2 class="timeline__item__content__date">2019. 12. 01 📍广东·珠海</h2>
+        <p class="timeline__item__content__description">周五还在珠海出差的我静静的等着猪崽过来，我们在这里拍了手势照💖，晚上吃完饭打车到珠海渔女，然后沿着情侣路走回酒店，时不时在海边沙滩画爱心💘，时不时一起在海边奔跑🌊，今晚还有流星，虽然我们没看到它从天际划过，但是你却如同流星一般闪闪发光的在我身边🌟...</p>
+      </div>
+    </div>
+    <div class="timeline__item timeline__item--11 timeline__item-bg">
+      <div class="timeline__item__station"></div>
+      <div class="timeline__item__content">
+        <h2 class="timeline__item__content__date">2020. 01. 22 📍广东·梅州</h2>
+        <p class="timeline__item__content__description">不知不觉，还有2天就过年啦，然后今天跟猪崽踏上了回家的路途，一路很顺畅....</p>
+      </div>
+    </div>
+    <div class="timeline__item timeline__item--12 timeline__item-bg">
+      <div class="timeline__item__station"></div>
+      <div class="timeline__item__content">
+        <h2 class="timeline__item__content__date">2020. 02. 13 📍广东·深圳</h2>
+        <p class="timeline__item__content__description">今天猪崽单位发出通知,不允许外出,也就是没法在回小窝,见她都很难啦,不知疫情何时结束😔..</p>
+      </div>
+    </div>
+    <div class="timeline__item timeline__item--13 timeline__item-bg">
+      <div class="timeline__item__station"></div>
+      <div class="timeline__item__content">
+        <h2 class="timeline__item__content__date">2020. 03. all 📍广东·深圳</h2>
+        <p class="timeline__item__content__description">深圳经过了长时间的疫情风波，现在终于有了阶段性的控制，这也代表着距离猪崽能出门的日子不远啦,坚持就是胜利💪...</p>
+      </div>
+    </div>
+    <div class="timeline__item timeline__item--14 timeline__item-bg">
+      <div class="timeline__item__station"></div>
+      <div class="timeline__item__content">
+        <h2 class="timeline__item__content__date">xxxx. xx.xx 📍未来</h2>
+        <p class="timeline__item__content__description">光阴如梭,四季流转,岁月只肯停留在你这里,我也只好眷恋不去💘...</p>
+      </div>
+    </div>
+  </div>
+</section>
 <footer>
     <script src="https://cdnjs.loli.net/ajax/libs/popper.js/1.16.1/popper.min.js"></script>
     <script src="https://cdnjs.loli.net/ajax/libs/twitter-bootstrap/4.4.1/js/bootstrap.min.js"></script>
     <script src="./res/js/main.js"></script>
     <script type="text/javascript">
+
     var btn1 = document.getElementById("btn-play");
         btn1.onclick = function(){
              if(audio.paused){                 
                 audio.play();
             }
-        }   
-
+        }
     </script>
     <script>
         window.showSiteRuntime = function() {
